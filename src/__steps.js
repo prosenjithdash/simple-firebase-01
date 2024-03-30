@@ -10,6 +10,9 @@
  * 9. Loin.jsx: Before return =>  const auth = getAuth(app);
  * 10. import googleAddProvider and create newProvider =>import { GoogleAuthProvider } from "firebase/auth";
     const provider = new GoogleAuthProvider();
+   11. use signInPopup and pass auth and provider
+* 12. Activate signIn method (google, facebook, gitHub, etc...)
+
 
  
  */

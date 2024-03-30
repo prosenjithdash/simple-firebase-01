@@ -1,19 +1,26 @@
 
-import { GoogleAuthProvider, getAuth } from "firebase/auth";
+
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../Firebase/Firebase.init";
 
+
 const Login = () => {
-
-    // google authentication step-1
-    // google authentication step-2
+    // google authentication step - 1
     const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
 
-    // google authentication step-3
-    //For google
+    // google authentication step - 2
+    const provider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
-        console.log('Google mama is coming.')
+        signInWithPopup(auth, provider)
+            .then(result => {
+            console.log(result.user)
+            })
+            .catch((error) => {
+                console.log('error',error.message);
+            })
     }
+    
+
 
     return (
         <div>
